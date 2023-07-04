@@ -236,10 +236,10 @@ init();
 function onMouseClick(cardIndex) {
   switch (cardIndex) {
     case 0:
-      window.location.href = 'https://www.google.com/';
+      window.location.href = './pocker/poker.html';
       break;
     case 1:
-      window.location.href = '../poker/develop/poker.html';
+      window.location.href = '';
       break;
     case 2:
       window.location.href = 'https://www.yahoo.com/';
