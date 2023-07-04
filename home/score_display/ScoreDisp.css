@@ -1,11 +1,25 @@
+/*******************************************************************
+***  File Name		: ScoreDisp.css
+***  Version		: V1.0
+***  Designer		: 小林 丈瑠
+***  Date			: 2023.06.20
+***  Purpose       	: 点数表示画面の装飾行う．
+***
+*******************************************************************/
+/*
+*** Revision :
+*** V1.0 : 小林 丈瑠, 2023.06.20
+*/
+
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
   background: linear-gradient(to bottom right, #20232a, #414a59);
   color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
   overflow: hidden;
+  padding: 20px;
+  text-align: center;
 }
 
 h1 {
@@ -17,14 +31,14 @@ h1 {
 }
 
 .button {
-  display: inline-block;
   background-color: #4CAF50;
+  border-radius: 4px;
   color: #fff;
+  display: inline-block;
+  margin-right: 10px;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 4px;
   transition: background-color 0.3s, transform 0.3s;
-  margin-right: 10px;
 }
 
 .button:last-child {
@@ -37,8 +51,8 @@ h1 {
 }
 
 .container {
-  max-width: 600px;
   margin: 0 auto;
+  max-width: 600px;
 }
 
 @keyframes moveBackground {
@@ -52,14 +66,14 @@ h1 {
 }
 
 body:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  animation: moveBackground 20s linear infinite;
   background-image: url("sit2.jpg");
   background-size: cover;
-  animation: moveBackground 20s linear infinite;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
