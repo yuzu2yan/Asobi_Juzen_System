@@ -239,7 +239,7 @@ function onMouseClick(cardIndex) {
       window.location.href = './pocker/poker.html';
       break;
     case 1:
-      window.location.href = '';
+      window.location.href = './avoid/AvoidGame.html';//避けるゲームへのパス
       break;
     case 2:
       window.location.href = 'https://www.yahoo.com/';
