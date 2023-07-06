@@ -11,6 +11,7 @@
 *** Revision :
 *** V1.0 : 小林 丈瑠, 2023.06.20
 *** V1.1 : 小林 丈瑠, 2023.07.04 score_disp.js
+*** V1.2 : 今中 翔悟, 2023.07.06 ランキング表示画面への遷移を追加
 */
 
 
@@ -29,10 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
 const rankingButton = document.getElementById("rankingButton");
 
 // From. Changed 小林丈瑠 2023.07.04
+// From. Changed 今中翔悟 2023.07.06
 rankingButton.addEventListener("click", function() {
   const res = confirm('ランキングを表示しますか？');
   if (res === true) {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../ranking/RankingUI.html";
     // window.location.href = "test2.html";
   }
   else {
@@ -40,6 +42,7 @@ rankingButton.addEventListener("click", function() {
   }
 }, false);
 // To. Changed 小林丈瑠 2023.07.04
+// To. Changed 今中翔悟 2023.07.06
 
 
 // ゲーム選択ボタンが押されたら，ゲーム選択画面へ遷移させる．
