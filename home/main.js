@@ -236,7 +236,7 @@ init();
 function onMouseClick(cardIndex) {
   switch (cardIndex) {
     case 0:
-      window.location.href = './pocker/poker.html';
+      window.location.href = './poker/poker.html';
       break;
     case 1:
       window.location.href = './avoid/AvoidGame.html';//避けるゲームへのパス
