@@ -245,7 +245,7 @@ function onMouseClick(cardIndex) {
       window.location.href = './block_breaker/Build/block_breaker.html';//ブロック崩しのパス
       break;
     case 3:
-      window.location.href = './ranking/Ranking.html';
+      window.location.href = './ranking/RankingUI.html';
       break;
     default:
       console.log('default');
