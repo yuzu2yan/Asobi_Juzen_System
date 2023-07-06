@@ -242,7 +242,7 @@ function onMouseClick(cardIndex) {
       window.location.href = './avoid/AvoidGame.html';//避けるゲームへのパス
       break;
     case 2:
-      window.location.href = 'https://www.yahoo.com/';
+      window.location.href = './block_breaker/Build/block_breaker.html';//ブロック崩しのパス
       break;
     default:
       console.log('default');
