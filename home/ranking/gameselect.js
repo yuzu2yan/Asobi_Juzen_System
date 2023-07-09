@@ -46,7 +46,7 @@ window.addEventListener('load', function(){
       alert('ブロック崩しが選択されました');
       sendRequest(3,displayData);
     }else if(Game === 'menu'){
-      location.href = '/sendTest.html';//ここにメニューのURLを入れる
+      location.href = '../index.html';//ここにメニューのURLを入れる
     }else{
       alert('不正な値です。');
     }
