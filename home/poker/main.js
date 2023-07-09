@@ -156,21 +156,61 @@ export default class Game {
     let message = `(YOU)${youResult.hand}vs(COM)${computerResult.hand}\n`;
     // 勝者の判定
     if (youResult.strength < computerResult.strength) {
-      message += `あなたの負けです`;
+      message += `あなたの負けです\nもう一度挑戦しますか？`;
+      if(window.confirm(message)){
+        this.#initialize();
+      }
+      else{
+        location.href = "../index.html";
+      }
     } else if (youResult.strength > computerResult.strength) {
       message += `あなたの勝ちです`;
+      window.alert(message);
+      if(window.confirm(`ダブルアップに挑戦しますか？`)){
+        location.href = "high&low.html";
+      }
+      else{
+        if (window.confirm(`もう一度挑戦しますか？`)) {
+          this.#initialize();
+        }
+        else {
+          location.href = "../index.html";
+        }
+      }
     } else {
       // 役が同じ場合は、ランクの強い方を勝者とする
       if (youResult.rank < computerResult.rank) {
-        message += `あなたの負けです`;
+        message += `あなたの負けです\nもう一度挑戦しますか？`;
+        if(window.confirm(message)){
+          this.#initialize();
+        }
+        else{
+          location.href = "../index.html";
+        }
       } else if (youResult.rank > computerResult.rank) {
         message += `あなたの勝ちです`;
+        window.alert(message);
+        if(window.confirm(`ダブルアップに挑戦しますか？`)){
+          location.href = "high&low.html";
+        }
+        else{
+          if (window.confirm(`もう一度挑戦しますか？`)) {
+            this.#initialize();
+          }
+          else {
+            location.href = "../index.html";
+          }
+        }
       } else {
-        message += `引き分けです`;
+        message += `引き分けです\nもう一度挑戦しますか？`;
+        if(window.confirm(message)){
+          this.#initialize();
+        }
+        else{
+          location.href = "../index.html";
+        }
       }
     }
-    // メッセージを表示
-    alert(message);
   };
 
   // Replayボタンのクリックイベントハンドラ
