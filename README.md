@@ -7,5 +7,5 @@ URL：http://160.16.141.77:51280/
 - ```git pull```でgitをpull
 - ```sudo service apache2 restart```でapacheを更新
   
-**内容が更新されない場合**  
+##### 内容が更新されない場合    
 ⇒ブラウザのキャッシュを消去
