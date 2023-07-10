@@ -174,7 +174,7 @@ export default class Game {
         location.href = `high&low.html?score=${youResult.score}`;
       }
       else{
-          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${youResult.score}`;
         }
       }
     else {
@@ -194,7 +194,7 @@ export default class Game {
           location.href = `high&low.html?score=${youResult.score}`;
         }
         else {
-          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${youResult.score}`;
         }
       } else {
         message += `引き分けです\nもう一度挑戦しますか？`;
