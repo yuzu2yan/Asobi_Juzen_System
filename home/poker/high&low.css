@@ -1,0 +1,86 @@
+body {
+  background: url(images/board.png);
+  background-size: cover;
+}
+
+h1 {
+  margin-top: 70px;
+  color: yellowgreen;
+}
+
+.field {
+  --drop-shadow: 0 10px 25px 0 rgb(0 0 0 / 50%);
+  /* position: relative; */
+  text-align: center;
+  inset: 0;
+  margin: auto;
+  align-items: center;
+  width: clamp(300px, 100%,700px);
+  margin-top: 80px;
+  border-spacing: 5px;
+}
+
+.field td {
+  /* position: relative; */
+  text-align: center;
+}
+
+.card {
+  transition: 0.3s linear;
+  max-width: 120px;
+  position: center;
+  z-index: 1;
+}
+
+.card.stock {
+  box-shadow: var(--drop-shadow);
+  filter: hue-rotate(135deg);
+}
+
+.card.stock:nth-child(1) {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+.card.stock:nth-child(2) {
+  position: relative;
+}
+
+.card.stock:nth-child(3) {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.card.selected {
+  transform: translateY(var(--shiftY));
+  box-shadow: var(--drop-shadow);
+}
+
+.card.com.selected {
+  --shiftY: -20%;
+}
+
+.card.you.selected {
+  --shiftY: 20%;
+}
+
+.button {
+  size: 20px;
+  width: 25%;
+  border: 3px solid black;
+  border-radius: 50px;
+  background-color: antiquewhite;
+  height: 3em;
+  box-shadow: var(--drop-shadow);
+}
+
+.button :hover {
+  background-color: #313131;
+  color: #FFF;
+}
+
+.button + .button {
+  margin-top: 5px;
+}
