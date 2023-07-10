@@ -10,6 +10,7 @@
 <body>
   <table class="field">
     <tr>
+      <!-- コンピュータの手札の配置 -->
       <td class="cell">
         <img src="images/red.png" class="card com" alt="">
       </td>
@@ -43,6 +44,7 @@
       <td></td>
     </tr>
     <tr>
+      <!-- プレイヤーの手札の配置 -->
       <td class="cell">
         <img src="images/blue.png" class="card you" alt="">
       </td>
@@ -61,11 +63,13 @@
     </tr>
     <tr>
       <td class="cell" colspan="5">
+        <!-- Drawボタンを配置 -->
         <button class="button" id="replay" disabled>Replay</button>
         <button class="button" id="draw">Draw</button>
       </td>
     </tr>
   </table>
+  <!-- ポーカーを起動 -->
   <script type="module" src="app.js"></script>
 </body>
 </html>

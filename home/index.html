@@ -6,7 +6,7 @@
     <meta name="google" value="notranslate" />
     <title>Asobi Juzen</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- ライブラリ読み込み -->
+    <!-- ライブラリをCDNで読み込み -->
     <script type="importmap">
       {
         "imports": {
@@ -15,14 +15,14 @@
         }
       }
     </script>
-    <!-- GSAPも -->
+    <!-- GSAPをCDNで読み込む -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script type="module" src="main.js"></script>
-    <!-- CSSを調整 -->
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- カバーフローの配置 -->
     <div id="container"></div>
+    <!-- スクロールバーの配置 -->
     <div id="rangeSliderContainer">
       <input type="range" id="rangeSlider" min="0" max="1" step="0.01" />
     </div>

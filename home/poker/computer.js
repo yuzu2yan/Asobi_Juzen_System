@@ -1,3 +1,17 @@
+/*******************************************************************
+***  File Name : computer.js
+***  Version : V1.0
+***  Designer : 幸前　譲
+***  Date : 2023.06.13
+***  Purpose        : plyaerクラスを継承したcomputerクラスを定義する
+***
+*******************************************************************/
+/*
+*** Revision :
+*** V1.0 : 幸前　譲, 2023.06.13
+*/
+
+
 import Pair from './pair.js';
 import Player from './player.js';
 

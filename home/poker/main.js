@@ -1,12 +1,16 @@
 /*******************************************************************
 ***  File Name : main.js
-***  Version : V1.0
+***  Version : V1.1
 ***  Designer : 幸前　譲
-***  Date : 2023.06.13
+***  Date : 2023.07.10
 ***  Purpose        : ポーカーのメインフローを処理する
 ***
 *******************************************************************/
-
+/*
+*** Revision :
+*** V1.0 : 幸前　譲, 2023.06.13
+*** V1.1 : 幸前　譲, 2023.07.10 judgeメソッドにおける遷移やスコアの処理を追加
+*/
 
 import Utils from "./utils.js";
 import Player from "./player.js";
@@ -170,7 +174,7 @@ export default class Game {
         location.href = `high&low.html?score=${youResult.score}`;
       }
       else{
-          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${youResult.score}`;
         }
       }
     else {
@@ -190,7 +194,7 @@ export default class Game {
           location.href = `high&low.html?score=${youResult.score}`;
         }
         else {
-          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${youResult.score}`;
         }
       } else {
         message += `引き分けです\nもう一度挑戦しますか？`;

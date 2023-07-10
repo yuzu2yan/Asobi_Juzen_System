@@ -1,3 +1,18 @@
+/*******************************************************************
+***  File Name : high&low.js
+***  Version : V1.1
+***  Designer : 幸前　譲
+***  Date : 2023.07.10
+***  Purpose        : ダブルアップを処理する
+***
+*******************************************************************/
+/*
+*** Revision :
+*** V1.0 : 幸前　譲, 2023.07.7
+*** V1.1 : 幸前　譲, 2023.07.10 judgeメソッドにおける遷移やスコアの処理を追加
+*/
+
+
 import Utils from "./utils.js";
 import Card from "./card.js";
 import Player from "./player.js";
@@ -113,7 +128,7 @@ export default class DubbleUp {
         if (window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
         }
         else {
-          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${this.#score}`;
         }
       }
       else if (this.#you.cards[0].rank < this.#computer.cards[0].rank) {
@@ -133,7 +148,7 @@ export default class DubbleUp {
           if (window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
           }
           else{
-            location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+            location.href = `../score_display/ScoreDisp.html?gameId=1&score=${this.#score}`;
           }
         }
         else if (this.#you.cards[0].suit < this.#computer.cards[0].suit) { 
@@ -155,7 +170,7 @@ export default class DubbleUp {
         if(window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
         }
         else{
-          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${this.#score}`;
         }
       }
       else if (this.#you.cards[0].rank > this.#computer.cards[0].rank) {
@@ -175,7 +190,7 @@ export default class DubbleUp {
         if(window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
         }
         else{
-          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+          location.href = `../score_display/ScoreDisp.html?gameId=1&score=${this.#score}`;
         }
         }
         else if (this.#you.cards[0].suit > this.#computer.cards[0].suit) { 
