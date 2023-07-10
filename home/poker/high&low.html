@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Dubble Up Chance!!</title>
+  <link href="high&low.css" rel="stylesheet">
+
+</head>
+<body>
+  <table class="field">
+    <tr>
+      <h1>
+        <center>Your Score is <span id="myScore"></span></center>
+      </h1>
+    </tr>
+    <tr>
+      <td class="cell">
+        <img src="images/blue.png" class="card com" alt="">
+      </td>
+      <td class="cell">
+        <img src="images/blue.png" class="card you" alt="">
+      </td>
+    </tr>
+    <tr>
+      <td class="cell" colspan="5">
+        <button class="button" id="high">High</button>
+        <button class="button" id="low">Low</button>
+      </td>
+    </tr>
+  </table>
+  <script type="module" src="high&low.js"></script>
+</body>
+</html>

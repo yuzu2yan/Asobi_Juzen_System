@@ -1,0 +1,47 @@
+<!--------------------------------------------------------------------------------
+---Designer: 今中翔悟
+---Date: 2023/5/30
+---Purpose: ランキング表示UI
+---------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ランキング</title>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="RankingUI.css">
+      <script type="module" src="gameselect.js"></script>
+      <script src="particles.min.js"></script>
+      <script src="rankingui.js"></script>
+  </head>
+  <body>
+    <h1 class="Title">Ranking</h1>
+  <!-- ドロップダウンメニュー -->
+    <div class="DropDown">
+      <select name="ゲーム" id="selectGame">
+        <option>--選択してください--</option>
+        <option value="Poker">ポーカー</option>
+        <option value="Escape">避けるゲーム</option>
+        <option value="Block">ブロック崩し</option>
+        <option value="menu">メニューに戻る</option>
+      </select>
+    </div>
+  <!-- ランキング表示　-->
+    <div class="RankingContainer">
+      <table class="RankingTable">
+        <thead id="HeadLine">
+          <tr>
+            <th id = rank>Ranking</th>
+            <th id = score>Score</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <div>
+      <p></p>
+    </div>
+    <!--<canvas class="background"></canvas>-->
+    <div id="particles-js"></div>
+    </body>
+  </body>
+</html>
