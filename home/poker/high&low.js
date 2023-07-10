@@ -16,7 +16,8 @@ export default class DubbleUp {
     this.#computer = null;
     this.#cards = [];
     this.#isPlaying = false;
-    this.#score = 50;
+    let urlParams = new URLSearchParams(window.location.search);
+    this.#score = urlParams.get('score');
     this.#addEvent(); // イベントハンドラを登録
   }
 
@@ -107,41 +108,85 @@ export default class DubbleUp {
     // 勝者の判定
     if (selection === "High") {
       if (this.#you.cards[0].rank > this.#computer.cards[0].rank) {
-        alert("あなたの勝ちです");
+        alert("ダブルアップ成功！！");
         this.#score *= 2;
+        if (window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
+        }
+        else {
+          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+        }
       }
       else if (this.#you.cards[0].rank < this.#computer.cards[0].rank) {
-        alert("あなたの負けです");
-        this.#score = 0;
+        alert("ダブルアップ失敗");
+          this.#score = 0;
+          if (window.confirm(`もう一度ポーカーを遊びますか？`)) {
+            location.href = "./poker.html";
+          }
+          else {
+            location.href = "../index.html";
+          }
       }
       else {
         if (this.#you.cards[0].suit > this.#computer.cards[0].suit) {
-          alert("あなたの勝ちです");
+          alert("ダブルアップ成功！！");
           this.#score *= 2;
+          if (window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
+          }
+          else{
+            location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+          }
         }
         else if (this.#you.cards[0].suit < this.#computer.cards[0].suit) { 
-          alert("あなたの負けです");
+          alert("ダブルアップ失敗");
           this.#score = 0;
+          if (window.confirm(`もう一度ポーカーを遊びますか？`)) {
+            location.href = "./poker.html";
+          }
+          else {
+            location.href = "../index.html";
+          }
         }
       }
     }
     else if (selection === "Low") {
       if (this.#you.cards[0].rank < this.#computer.cards[0].rank) {
-        alert("あなたの勝ちです");
+        alert("ダブルアップ成功！！");
         this.#score *= 2;
+        if(window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
+        }
+        else{
+          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+        }
       }
       else if (this.#you.cards[0].rank > this.#computer.cards[0].rank) {
-        alert("あなたの負けです");
-        this.#score = 0;
+        alert("ダブルアップ失敗");
+          this.#score = 0;
+          if (window.confirm(`もう一度ポーカーを遊びますか？`)) {
+            location.href = "./poker.html";
+          }
+          else {
+            location.href = "../index.html";
+          }
       }
       else {
         if (this.#you.cards[0].suit < this.#computer.cards[0].suit) {
-          alert("あなたの勝ちです");
-          this.#score *= 2;
+          alert("ダブルアップ成功！！");
+        this.#score *= 2;
+        if(window.confirm(`score : ${this.#score}\n続けて挑戦しますか？`)){
+        }
+        else{
+          location.href = `../score_display/ScoreDisp.html?score=${this.#score}`;
+        }
         }
         else if (this.#you.cards[0].suit > this.#computer.cards[0].suit) { 
-          alert("あなたの負けです");
+          alert("ダブルアップ失敗");
           this.#score = 0;
+          if (window.confirm(`もう一度ポーカーを遊びますか？`)) {
+            location.href = "./poker.html";
+          }
+          else {
+            location.href = "../index.html";
+          }
         }
       }
     }

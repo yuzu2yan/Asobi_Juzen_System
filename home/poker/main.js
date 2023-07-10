@@ -153,60 +153,51 @@ export default class Game {
     const youResult = Pair.judge(this.#you.cards);
     const computerResult = Pair.judge(this.#computer.cards);
     // 勝敗メッセージ
-    let message = `(YOU)${youResult.hand}vs(COM)${computerResult.hand}\n`;
+    let message = `あなた：${youResult.hand} vs 相手：${computerResult.hand}\n`;
     // 勝者の判定
     if (youResult.strength < computerResult.strength) {
       message += `あなたの負けです\nもう一度挑戦しますか？`;
-      if(window.confirm(message)){
+      if (window.confirm(message)){
         this.#initialize();
       }
-      else{
+      else {
         location.href = "../index.html";
       }
     } else if (youResult.strength > computerResult.strength) {
-      message += `あなたの勝ちです`;
+      message += `あなたの勝ちです！！\n`;
       window.alert(message);
-      if(window.confirm(`ダブルアップに挑戦しますか？`)){
-        location.href = "high&low.html";
+      if(window.confirm(`score : ${youResult.score}\nダブルアップに挑戦しますか？`)){
+        location.href = `high&low.html?score=${youResult.score}`;
       }
       else{
-        if (window.confirm(`もう一度挑戦しますか？`)) {
+          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
+        }
+      }
+    else {
+      // 役が同じ場合は、ランクの強い方を勝者とする
+      if (youResult.rank < computerResult.rank) {
+        message += `あなたの負けです\nもう一度挑戦しますか？`;
+        if (window.confirm(message)){
           this.#initialize();
         }
         else {
           location.href = "../index.html";
         }
-      }
-    } else {
-      // 役が同じ場合は、ランクの強い方を勝者とする
-      if (youResult.rank < computerResult.rank) {
-        message += `あなたの負けです\nもう一度挑戦しますか？`;
-        if(window.confirm(message)){
-          this.#initialize();
-        }
-        else{
-          location.href = "../index.html";
-        }
       } else if (youResult.rank > computerResult.rank) {
-        message += `あなたの勝ちです`;
+        message += `あなたの勝ちです！！`;
         window.alert(message);
-        if(window.confirm(`ダブルアップに挑戦しますか？`)){
-          location.href = "high&low.html";
+        if (window.confirm(`score : ${youResult.score}\nダブルアップに挑戦しますか？`)){
+          location.href = `high&low.html?score=${youResult.score}`;
         }
-        else{
-          if (window.confirm(`もう一度挑戦しますか？`)) {
-            this.#initialize();
-          }
-          else {
-            location.href = "../index.html";
-          }
+        else {
+          location.href = `../score_display/ScoreDisp.html?score=${youResult.score}`;
         }
       } else {
         message += `引き分けです\nもう一度挑戦しますか？`;
-        if(window.confirm(message)){
+        if (window.confirm(message)){
           this.#initialize();
         }
-        else{
+        else {
           location.href = "../index.html";
         }
       }
