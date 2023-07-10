@@ -216,6 +216,7 @@ export default class Pair {
       StrongestHand = {
         strength: 9,
         rank: this.#rank,
+        score: 10000,
         hand: "ロイヤルストレートフラッシュ"
       };
     }
@@ -223,6 +224,7 @@ export default class Pair {
       StrongestHand = {
         strength: 8,
         rank: this.#rank,
+        score: 2000,
         hand: "ストレートフラッシュ"
       };
     }
@@ -230,6 +232,7 @@ export default class Pair {
       StrongestHand = {
         strength: 7,
         rank: this.#rank,
+        score: 1000,
         hand: "フォーカード"
       };
     }
@@ -237,6 +240,7 @@ export default class Pair {
       StrongestHand = {
         strength: 6,
         rank: this.#rank,
+        score: 500,
         hand: "フルハウス"
       };
     }
@@ -244,6 +248,7 @@ export default class Pair {
       StrongestHand = {
         strength: 5,
         rank: this.#rank,
+        score: 400,
         hand: "フラッシュ"
       };
     }
@@ -251,6 +256,7 @@ export default class Pair {
       StrongestHand = {
         strength: 4,
         rank: this.#rank,
+        score: 300,
         hand: "ストレート"
       };
     }
@@ -258,6 +264,7 @@ export default class Pair {
       StrongestHand = {
         strength: 3,
         rank: this.#rank,
+        score: 200,
         hand: "スリーカード"
       };
     }
@@ -265,6 +272,7 @@ export default class Pair {
       StrongestHand = {
         strength: 2,
         rank: this.#rank,
+        score: 100,
         hand: "ツーペア"
       };
     }
@@ -272,6 +280,7 @@ export default class Pair {
       StrongestHand = {
         strength: 1,
         rank: this.#rank,
+        score: 50,
         hand: "ワンペア"
       };
     }
@@ -279,6 +288,7 @@ export default class Pair {
       StrongestHand = {
         strength: 0,
         rank: 0,
+        score: 0,
         hand: "役無し"
       };
     }

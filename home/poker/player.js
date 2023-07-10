@@ -3,6 +3,7 @@ import Card from './card.js';
 export default class Player {
   #cards; // 手札
   #nodes; // 手札のノード
+  #score = 0; // スコア
 
   get cards() {
     return this.#cards;

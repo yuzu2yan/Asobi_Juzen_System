@@ -16,7 +16,8 @@ export default class DubbleUp {
     this.#computer = null;
     this.#cards = [];
     this.#isPlaying = false;
-    this.#score = 50;
+    let urlParams = new URLSearchParams(window.location.search);
+    this.#score = urlParams.get('score');
     this.#addEvent(); // イベントハンドラを登録
   }
 
