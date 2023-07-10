@@ -11,6 +11,8 @@
 *** Revision :
 *** V1.0 : 小林 丈瑠, 2023.06.20
 *** V1.1 : 小林 丈瑠, 2023.07.04 score_disp.js
+*** V1.2 : 今中 翔悟, 2023.07.06 ランキング表示画面への遷移を追加
+*** V1.3 : 小林 丈瑠, 2023.07.10 ゲーム選択画面への遷移を追加
 */
 
 
@@ -25,14 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
 // To. Changed 小林丈瑠 2023.07.04
 
 
-// ランキング表示ボタンが押された，ランキング表示画面へ遷移させる．
+// ランキング表示ボタンが押されたら，ランキング表示画面へ遷移させる．
 const rankingButton = document.getElementById("rankingButton");
 
 // From. Changed 小林丈瑠 2023.07.04
+// From. Changed 今中翔悟 2023.07.06
 rankingButton.addEventListener("click", function() {
   const res = confirm('ランキングを表示しますか？');
   if (res === true) {
-    window.location.href = "https://www.google.com";
+    window.location.href = "../ranking/RankingUI.html";
     // window.location.href = "test2.html";
   }
   else {
@@ -40,6 +43,7 @@ rankingButton.addEventListener("click", function() {
   }
 }, false);
 // To. Changed 小林丈瑠 2023.07.04
+// To. Changed 今中翔悟 2023.07.06
 
 
 // ゲーム選択ボタンが押されたら，ゲーム選択画面へ遷移させる．
@@ -49,7 +53,11 @@ const gameSelectionButton = document.getElementById("gameSelectionButton");
 gameSelectionButton.addEventListener("click", function() {
   const res = confirm('ゲーム選択画面へ遷移しますか？');
   if (res === true) {
-    window.location.href = "https://www.amazon.com";
+    // From Changed 小林丈瑠 2023.07.10
+    window,location.href = "../index.html"
+    // To Changed 小林丈瑠 2023.07.10
+    
+    //window.location.href = "https://www.amazon.com";
   }
   else {
     ;
