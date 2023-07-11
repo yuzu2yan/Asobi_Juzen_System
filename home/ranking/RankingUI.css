@@ -9,8 +9,8 @@
   top: 68%;
   left: 50%;
   transform: translate(-50%, -55%);
-  width: 1000px;
-  height: 474px;
+  width: 80vw;
+  height: 50vh;
   background-color: rgba(240, 248, 255, 0.75);
   overflow-y: scroll;
   z-index: 1;
