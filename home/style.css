@@ -4,7 +4,7 @@ html {
 
 body {
   background: whitesmoke;
-  overflow: hidden;
+  overflow: hidden; 
   margin: 0;
   font-family: sans-serif;
   color: white;
@@ -16,6 +16,20 @@ body {
   padding: 0;
   overflow: hidden;
 }
+
+#rankingButton {
+  float: right;
+  margin-right: 10px;
+  height: 40px;
+}
+
+#logo {
+  color: gray;
+  margin-left: 10px;
+}
+
+
+
 #rangeSlider {
   width: 80%;
 }
@@ -23,7 +37,7 @@ body {
 #rangeSliderContainer {
   position: absolute;
   z-index: 2;
-  bottom: 48px;
+  bottom: 24px;
   width: 100%;
   text-align: center;
 }
