@@ -20,7 +20,7 @@ const URL_BG = "./imgs/bg.jpg";
 /** 平面の横幅 */
 const ITEM_W = 256;
 /** スライドの個数 */
-const MAX_SLIDE = 4;
+const MAX_SLIDE = 3;
 /** 平面の縦幅 */
 const ITEM_H = 256;
 /** 現在のスライドID */
@@ -257,9 +257,6 @@ function onMouseClick(cardIndex) {
       break;
     case 2:
       window.location.href = './block_breaker/Build/block_breaker.html';//ブロック崩しのパス
-      break;
-    case 3:
-      window.location.href = './ranking/RankingUI.html';
       break;
     default:
       console.log('default');
