@@ -45,8 +45,6 @@ export default class Game {
     Utils.addEventListener(".card.you", "click", this.#onClickCard.bind(this));
     // Drawボタンのクリックイベントハンドラを登録
     Utils.addEventListener("#draw", "click", this.#onClickDraw.bind(this));
-    // Replayボタンのクリックイベントハンドラを登録
-    Utils.addEventListener("#replay", "click", this.#onClickReplay.bind(this));
   }
 
   /****************************************************************************
@@ -142,10 +140,8 @@ export default class Game {
     this.#computer.displayCards(!this.#isPlaying);
     // ボタンを描画
     if (this.#isPlaying) {
-      document.querySelector("#replay").setAttribute("disabled", true);
       document.querySelector("#draw").removeAttribute("disabled");
     } else {
-      document.querySelector("#replay").removeAttribute("disabled");
       document.querySelector("#draw").setAttribute("disabled", true);
     }
   };
@@ -270,9 +266,4 @@ export default class Game {
     }
   };
 
-  // Replayボタンのクリックイベントハンドラ
-  #onClickReplay(event) {
-    // ゲームを初期化
-    this.#initialize();
-  };
 }
