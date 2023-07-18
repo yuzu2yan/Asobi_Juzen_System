@@ -4,7 +4,7 @@
 ***  Designer : 幸前　譲
 ***  Date : 2023.07.10
 ***  Purpose        : ポーカーのメインフローを処理する
-***
+***　Module    : 1 ポーカー主処理, 1 ポーカーUI主処理, 2 プレイヤー手札処理, 3 コンピュータ手札処理
 *******************************************************************/
 /*
 *** Revision :
@@ -33,22 +33,40 @@ export default class Game {
     this.#addEvent(); // イベントハンドラを登録
   }
 
-  // イベントハンドラを登録
+  /****************************************************************************
+  *** Function Name : addEvent()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : イベントハンドラを登録。
+  *** Return : なし
+  ****************************************************************************/
   #addEvent() {
     // プレイヤーの手札のクリックイベントハンドラを登録
     Utils.addEventListener(".card.you", "click", this.#onClickCard.bind(this));
     // Drawボタンのクリックイベントハンドラを登録
     Utils.addEventListener("#draw", "click", this.#onClickDraw.bind(this));
-    // Replayボタンのクリックイベントハンドラを登録
-    Utils.addEventListener("#replay", "click", this.#onClickReplay.bind(this));
   }
 
-  // ゲームを実行
+  /****************************************************************************
+  *** Function Name : run()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : ゲームを実行。
+  *** Return : なし
+  ****************************************************************************/
+
   run() {
     this.#initialize(); // ゲームを初期化
   }
 
-  // ゲームを初期化
+  /****************************************************************************
+  *** Function Name : initialize()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : ゲームを初期化する際の内容。
+  *** Return : なし
+  ****************************************************************************/
+
   #initialize() {
     // プレイヤーを生成
     this.#you = new Player(".card.you");
@@ -75,7 +93,14 @@ export default class Game {
     this.#updateView();
   };
 
-  // 山札をシャッフル
+  /****************************************************************************
+  *** Function Name : shuffleCards()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 山札をシャッフルする。
+  *** Return : なし
+  ****************************************************************************/
+
   #shuffleCards() {
     [...Array(100)].forEach(() => { // 十分に混ざるように100回繰り返す
       // 山札からランダムに2枚のカードを選択して交換
@@ -85,7 +110,14 @@ export default class Game {
     });
   };
 
-  // プレイヤーとコンピュータに５枚ずつカードを配る
+  /****************************************************************************
+  *** Function Name : dealCards()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : プレイヤーとコンピュータにカードを配る。
+  *** Return : なし
+  ****************************************************************************/
+
   #dealCards(player, n) {
     [...Array(n)].map(() => { // n回繰り返す
       // 山札からカードを取り出してプレイヤーに配る
@@ -93,7 +125,14 @@ export default class Game {
     });
   };
 
-  // 画面の描画を更新
+  /****************************************************************************
+  *** Function Name : updateView()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 画面の描画を更新。
+  *** Return : なし
+  ****************************************************************************/
+
   #updateView() {
     // プレイヤーの手札を描画
     this.#you.displayCards(true);
@@ -101,15 +140,20 @@ export default class Game {
     this.#computer.displayCards(!this.#isPlaying);
     // ボタンを描画
     if (this.#isPlaying) {
-      document.querySelector("#replay").setAttribute("disabled", true);
       document.querySelector("#draw").removeAttribute("disabled");
     } else {
-      document.querySelector("#replay").removeAttribute("disabled");
       document.querySelector("#draw").setAttribute("disabled", true);
     }
   };
 
-  // プレイヤーの手札のクリックイベントハンドラ
+  /****************************************************************************
+  *** Function Name : onClickCard()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : プレイヤーの手札のクリックイベントハンドラ。
+  *** Return : なし
+  ****************************************************************************/
+
   #onClickCard(event) {
     // ゲーム実行中のみクリックを受け付ける
     if (this.#isPlaying) {
@@ -117,7 +161,14 @@ export default class Game {
     }
   };
 
-  // Drawボタンのクリックイベントハンドラ
+  /****************************************************************************
+  *** Function Name : onClickDraw()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : Drawボタンのクリックイベントハンドラ。
+  *** Return : なし
+  ****************************************************************************/
+
   async #onClickDraw(event) {
     // プレイヤーが選択したカードを交換する
     this.#you.selectedNodes.forEach(() => {
@@ -151,7 +202,14 @@ export default class Game {
     this.#judge();
   };
 
-  // 勝敗を判定する
+  /****************************************************************************
+  *** Function Name : judge()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 勝敗を判定する。
+  *** Return : なし
+  ****************************************************************************/
+
   #judge() {
     // 役の成否判定を行う 
     const youResult = Pair.judge(this.#you.cards);
@@ -208,9 +266,4 @@ export default class Game {
     }
   };
 
-  // Replayボタンのクリックイベントハンドラ
-  #onClickReplay(event) {
-    // ゲームを初期化
-    this.#initialize();
-  };
 }

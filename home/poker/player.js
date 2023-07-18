@@ -4,7 +4,7 @@
 ***  Designer : 幸前　譲
 ***  Date : 2023.06.13
 ***  Purpose        : playerクラスを定義する
-***
+***　Module    : 3 プレイヤー処理
 *******************************************************************/
 /*
 *** Revision :
@@ -36,7 +36,14 @@ export default class Player {
     this.#cards = [];
   };
 
-  // 手札を描画
+  /****************************************************************************
+  *** Function Name : displayCards()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 手札を描画。
+  *** Return : なし
+  ****************************************************************************/
+
   displayCards(front) {
     // 手札について
     this.cards.forEach((Card, index) => {
@@ -51,7 +58,14 @@ export default class Player {
     });
   };
 
-  // 新しいカードを手札に追加
+  /****************************************************************************
+  *** Function Name : addCard()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 新しいカードを手札に追加。
+  *** Return : なし
+  ****************************************************************************/
+
   addCard(newCard) {
     //　カードを手札の最後尾に追加 
     this.cards.push(newCard);
@@ -59,13 +73,27 @@ export default class Player {
     this.nodes[this.cards.length - 1].dataset.index = newCard.index;
   };
 
-  //　交換するカードを選択する
+  /****************************************************************************
+  *** Function Name : selectCard()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : カードを選択する。
+  *** Return : なし
+  ****************************************************************************/
+
   selectCard(node) {
     // 選択状態を表すCSSクラス名を切り替える
     node.classList.toggle("selected");
   };
 
-  // 山札からカードを引いて交換する
+  /****************************************************************************
+  *** Function Name : drawCard()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 山札からカードを引いて交換する。
+  *** Return : oldCard(Card)
+  ****************************************************************************/
+
   drawCard(newCard) {
     // 選択しているノードの先頭から１つ取り出す
     const node = this.selectedNodes.shift();
