@@ -36,7 +36,14 @@ export default class DubbleUp {
     this.#addEvent(); // イベントハンドラを登録
   }
 
-  // イベントハンドラを登録
+  /****************************************************************************
+  *** Function Name : addEvent()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : イベントハンドラを登録。
+  *** Return : なし
+  ****************************************************************************/
+
   #addEvent() {
     // Highボタンのクリックイベントハンドラを登録
     Utils.addEventListener("#high", "click", this.#onClickHigh.bind(this));
@@ -44,9 +51,25 @@ export default class DubbleUp {
     Utils.addEventListener("#low", "click", this.#onClickLow.bind(this));
   }
 
+  /****************************************************************************
+  *** Function Name : run()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : ゲームを実行。
+  *** Return : なし
+  ****************************************************************************/
+
   run() {
     this.#initialize();
   }
+
+  /****************************************************************************
+  *** Function Name : initialize()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : ゲームの初期化の内容。
+  *** Return : なし
+  ****************************************************************************/
 
   #initialize() {
     this.#you = new Player(".card.you");
@@ -69,18 +92,31 @@ export default class DubbleUp {
     this.#updateView();
   }
 
-    // 山札をシャッフル
-    #shuffleCards() {
-      [...Array(100)].forEach(() => { // 十分に混ざるように100回繰り返す
-        // 山札からランダムに2枚のカードを選択して交換
-        const index1 = Math.floor(Math.random() * this.#cards.length);
-        const index2 = Math.floor(Math.random() * this.#cards.length);
-        [this.#cards[index1], this.#cards[index2]] = [this.#cards[index2], this.#cards[index1]];
-      });
-    };
-  
+  /****************************************************************************
+  *** Function Name : shuffleCards()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 山札のカードをシャッフル。
+  *** Return : なし
+  ****************************************************************************/
 
-  // プレイヤーとコンピュータに１枚ずつカードを配る
+  #shuffleCards() {
+    [...Array(100)].forEach(() => { // 十分に混ざるように100回繰り返す
+      // 山札からランダムに2枚のカードを選択して交換
+      const index1 = Math.floor(Math.random() * this.#cards.length);
+      const index2 = Math.floor(Math.random() * this.#cards.length);
+      [this.#cards[index1], this.#cards[index2]] = [this.#cards[index2], this.#cards[index1]];
+    });
+  };
+
+  /****************************************************************************
+  *** Function Name : dealCards()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : プレイヤーとコンピュータにカードを配る。
+  *** Return : なし
+  ****************************************************************************/
+
   #dealCards(player, n) {
     [...Array(n)].map(() => { // n回繰り返す
       // 山札からカードを取り出してプレイヤーに配る
@@ -88,7 +124,14 @@ export default class DubbleUp {
     });
   };
 
-  // 画面の描画を更新
+  /****************************************************************************
+  *** Function Name : updateView()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 画面の描画を更新。
+  *** Return : なし
+  ****************************************************************************/
+
   #updateView() {
     // プレイヤーの手札を描画
     this.#you.displayCards(!this.#isPlaying);
@@ -96,7 +139,14 @@ export default class DubbleUp {
     this.#computer.displayCards(true);
   };
 
-  // Highボタンのクリックイベントハンドラ
+  /****************************************************************************
+  *** Function Name : onClickHigh()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : Highボタンのクリックイベントハンドラ。
+  *** Return : なし
+  ****************************************************************************/
+
   async #onClickHigh(event) {
     this.#isPlaying = false;
     await Utils.sleep(1000);
@@ -107,7 +157,14 @@ export default class DubbleUp {
     this.#initialize();
   };
 
-  // Lowボタンのクリックイベントハンドラ
+  /****************************************************************************
+  *** Function Name : onClickLow()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : Lowボタンのクリックイベントハンドラ。
+  *** Return : なし
+  ****************************************************************************/
+
   async #onClickLow(event) {
     this.#isPlaying = false;
     await Utils.sleep(1000);
@@ -118,7 +175,14 @@ export default class DubbleUp {
     this.#initialize();
   };
 
-  // 勝敗を判定する
+  /****************************************************************************
+  *** Function Name : judge()
+  *** Designer : 幸前　譲
+  *** Date : 2023.7.18
+  *** Function : 勝敗を判定する。
+  *** Return : なし
+  ****************************************************************************/
+
   #judge(selection) {
     // 勝者の判定
     if (selection === "High") {

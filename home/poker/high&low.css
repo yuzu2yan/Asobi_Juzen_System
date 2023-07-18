@@ -1,3 +1,13 @@
+/*******************************************************************
+***  File Name : high&low.css
+***  Version : V1.0
+***  Designer : 幸前　譲
+***  Date : 2023.07.18
+***  Purpose        : ダブルアップ(High&Low)のスタイルシート
+***
+*******************************************************************/
+
+
 body {
   background: url(images/board.png);
   background-size: cover;
@@ -69,18 +79,19 @@ h1 {
 .button {
   size: 20px;
   width: 25%;
-  border: 3px solid black;
+  border: 1px solid black;
   border-radius: 50px;
-  background-color: antiquewhite;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
   height: 3em;
   box-shadow: var(--drop-shadow);
 }
 
-.button :hover {
-  background-color: #313131;
-  color: #FFF;
+.button:hover {
+  background-color: #13c3ac;
 }
 
 .button + .button {
-  margin-top: 5px;
+  margin: 30px;
 }
