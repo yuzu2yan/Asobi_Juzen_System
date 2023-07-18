@@ -16,7 +16,15 @@ import Utils from "./utils.js";
 
 export default class Pair {
   static #rank = 0;
-  // ロイヤルストレートフラッシュを判定
+
+  /****************************************************************************
+    *** Function Name : isRoyalStraightFlush()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : ロイヤルストレートフラッシュを判定。
+    *** Return : isRoyal(boolean)
+    ****************************************************************************/
+  
   static isRoyalStraightFlush = (cards) => {
     let isRoyal = false;
     // ５枚すべてが同じスートでランクが[10,11,12,13,14]の場合
@@ -35,9 +43,16 @@ export default class Pair {
     return isRoyal;
   };
 
-  // ストレートフラッシュを判定
+  /****************************************************************************
+    *** Function Name : isStraightFlush()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : ストレートフラッシュを判定。
+    *** Return : isStraightFlush(boolean)
+    ****************************************************************************/
+
   static isStraightFlush = (cards) => {
-    let isStraight = false;
+    let isStraightFlush = false;
     // ５枚すべてが同じスートでランクが連続している場合
     if (
       cards.every((card) => card.suit === cards[0].suit) && // ５枚すべてが同じスート
@@ -50,10 +65,17 @@ export default class Pair {
       // ５枚のランクを合計
       this.#rank = Utils.sum(cards[0].rank, cards[1].rank, cards[2].rank, cards[3].rank, cards[4].rank);
     }
-    return isStraight;
+    return isStraightFlush;
   };
 
-  // フォーカードを判定
+  /****************************************************************************
+    *** Function Name : isFourCard()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : フォーカードを判定。
+    *** Return : isFourCard(boolean)
+    ****************************************************************************/
+  
   static isFourCard = (cards) => {
     let isFourCard = false;
     // ５枚のうち４枚のランクが同じ場合
@@ -74,7 +96,14 @@ export default class Pair {
     return isFourCard;
   };
 
-  // フルハウスを判定
+  /****************************************************************************
+    *** Function Name : isFullHouse()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : フルハウスを判定。
+    *** Return : isFullHouse(boolean)
+    ****************************************************************************/
+  
   static isFullHouse = (cards) => {
     let isFullHouse = false;
     // ５枚のうち３枚のランクが同じ場合
@@ -101,7 +130,14 @@ export default class Pair {
     return isFullHouse;
   };
 
-  // フラッシュを判定
+  /****************************************************************************
+    *** Function Name : isFlush()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : フラッシュを判定。
+    *** Return : isFlush(boolean)
+    ****************************************************************************/
+
   static isFlush = (cards) => {
     let isFlush = false;
     // ５枚すべてが同じスートの場合
@@ -113,7 +149,14 @@ export default class Pair {
     return isFlush;
   };
 
-  // ストレートを判定
+  /****************************************************************************
+    *** Function Name : isStraight()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : ストレートを判定。
+    *** Return : isStraight(boolean)
+    ****************************************************************************/
+
   static isStraight = (cards) => {
     let isStraight = false;
     // ５枚のランクが連続している場合
@@ -130,7 +173,14 @@ export default class Pair {
     return isStraight;
   };
 
-  // スリーカードを判定
+  /****************************************************************************
+    *** Function Name : isThreeCard()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : スリーカードを判定。
+    *** Return : isThreeCard(boolean)
+    ****************************************************************************/
+
   static isThreeCard = (cards) => {
     let isThreeCard = false;
     // ５枚のうち３枚のランクが同じ場合
@@ -158,7 +208,14 @@ export default class Pair {
     return isThreeCard;
   };
 
-  // ツーペアを判定
+  /****************************************************************************
+    *** Function Name : isTwoPair()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : ツーペアを判定。
+    *** Return : isTwoPair(boolean)
+    ****************************************************************************/
+
   static isTwoPair = (cards) => {
     let isTwoPair = false;
     // １枚目と２枚目のランクが同じ場合
@@ -188,7 +245,14 @@ export default class Pair {
     return isTwoPair;
   };
 
-  // ワンペアを判定
+  /****************************************************************************
+    *** Function Name : isOnePair()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : ワンペアを判定。
+    *** Return : isOnePair(boolean)
+    ****************************************************************************/
+
   static isOnePair = (cards) => {
     let isOnePair = false;
     // １枚目と２枚目のランクが同じ場合
@@ -218,7 +282,19 @@ export default class Pair {
     return isOnePair;
   };
 
-  // 最も強い役を判定
+  /****************************************************************************
+    *** Function Name : judge()
+    *** Designer : 幸前　譲
+    *** Date : 2023.7.18
+    *** Function : 最も強い役を判定。
+    *** Return : StrongestHand = {
+                  strength: int,
+                  rank: this.#rank,
+                  score: int,
+                  hand: string
+                 };
+    ****************************************************************************/
+
   static judge = (cards) => {
     let StrongestHand = null;
     // カード配列のコピーを作成
