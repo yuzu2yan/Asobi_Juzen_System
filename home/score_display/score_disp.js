@@ -34,6 +34,7 @@ import {sendData} from '../ranking/senddata.js';
 ****************************************************************************/
 
 // From. Changed 小林丈瑠 2023.07.10
+let isSent = false;
 const disp = function() {
   console.log('disp() called');
   
@@ -43,7 +44,10 @@ const disp = function() {
   const score = query[1].split('=')[1];
   console.log('gameId=' + gameId +  '\nscore=' + score);
   //データベースへの登録
-  sendData(gameId, score);
+  if(!isSent){
+    sendData(gameId, score);
+    isSent = true;
+  }
   
   document.addEventListener("DOMContentLoaded", function() {
     // htmlのresultの部分に点数表示

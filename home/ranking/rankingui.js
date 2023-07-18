@@ -2,6 +2,7 @@
 ***Designer             : 今中翔悟
 ***Date                 : 2023/6/13
 ***Purpose              : ランキング表示UI処理
+***Module               : C1.6 M1. ランキング表示UI主処理
 **************************************************************/
 
 window.addEventListener('load',function() {

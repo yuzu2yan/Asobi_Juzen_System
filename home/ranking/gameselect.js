@@ -2,6 +2,7 @@
 ***Designer             : 今中翔悟
 ***Date                 : 2023/7/2
 ***Purpose              : ゲーム選択処理
+***Module               : C3.0 M1.ランキング選択処理
 **************************************************************/
 
 import { sendRequest } from './sendrequest.js';
