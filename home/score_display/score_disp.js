@@ -41,29 +41,6 @@ import {sendData} from '../ranking/senddata.js';
 *** Return              : なし
 ****************************************************************************/
 
-
-// From. Changed 小林丈瑠 2023.07.10
-let isSent = false;
-const disp = function() {
-  console.log('disp() called');
-  
-  // URLからクエリパラメータを取得する
-  const query = location.search.substring(1).split('&');
-  const gameId = query[0].split('=')[1];
-  const score = query[1].split('=')[1];
-  console.log('gameId=' + gameId +  '\nscore=' + score);
-  //データベースへの登録
-  if(!isSent){
-    sendData(gameId, score);
-    isSent = true;
-  }
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    // htmlのresultの部分に点数表示
-    const result = document.getElementById("result");
-    result.textContent = 'あなたの得点は' + score + '点です!!!!!';
-  }, false);
-=======
 // From. Changed 小林丈瑠 2023.07.11
 const disp = function(score) {
   console.log('disp() called');
