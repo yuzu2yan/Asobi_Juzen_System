@@ -1,6 +1,7 @@
 # アソビ十全システム
 ![](https://img.shields.io/badge/version-1.0-blue)
 ![](https://img.shields.io/badge/release_date-july_2023-yellow)
+
 ![](https://img.shields.io/badge/ubuntu-v20.04.6-blue)
 ![](https://img.shields.io/badge/-Unity-000000.svg?logo=unity&style=popout)
 ![](https://img.shields.io/badge/nodejs-v14.21.3-blue)
