@@ -6,10 +6,6 @@
 ***  Purpose        : ゲーム選択画面におけるカバーフローの処理を行う
 ***
 *******************************************************************/
-/*
-*** Revision :
-*** V1.0 : 幸前　譲, 2023.06.13
-*/
 
 
 import * as THREE from "three";
@@ -63,6 +59,13 @@ window.addEventListener(
   { passive: false }
 );
 
+/****************************************************************************
+*** Function Name : init()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : カバーフローの初期化を行う。
+*** Return : なし
+****************************************************************************/
 
 function init() {
   // ライト
@@ -114,9 +117,14 @@ function init() {
   tick();
 }
 
-/**
- * スクロールが動いたときのイベント
- */
+/****************************************************************************
+*** Function Name : onInputChange()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : スクロールが動いた時のイベント
+*** Return : なし
+****************************************************************************/
+
 function onInputChange() {
   const val = elementInput.valueAsNumber;
   // スクロールバーの値からページIDの計算
@@ -125,10 +133,15 @@ function onInputChange() {
   moveSlide(nextId);
 }
 
-/**
- * スライドを移動
- * @param id  {number}  スライドのID
- */
+/****************************************************************************
+*** Function Name : moveSlide()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : スライドを移動する。
+@params id {number} スライドのID
+*** Return : なし
+****************************************************************************/
+
 function moveSlide(id) {
   // 遷移先が現在のスライド番号と同じであれば処理を終了
   if (currentPage === id) {
@@ -184,14 +197,27 @@ function moveSlide(id) {
   currentPage = id;
 }
 
-/** レイアウト処理(リサイズ対応も兼ねる) */
+/****************************************************************************
+*** Function Name : onResize()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : レイアウト処理(リサイズ対応も兼ねる)。
+*** Return : なし
+****************************************************************************/
+
 function onResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 }
 
-/** エンターフレームイベント */
+/****************************************************************************
+*** Function Name : tick()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : エンターフレームイベント。
+*** Return : なし
+****************************************************************************/
 function tick() {
   // レンダリング
   renderer.render(scene, camera);
@@ -246,7 +272,14 @@ class Card extends THREE.Object3D {
 
 init();
 
-// カードのクリックイベントハンドラ関数を定義
+/****************************************************************************
+*** Function Name : onMouseClick()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : カードのクリックイベントハンドラ関数を定義。
+*** Return : なし
+****************************************************************************/
+
 function onMouseClick(cardIndex) {
   switch (cardIndex) {
     case 0:
@@ -265,7 +298,14 @@ function onMouseClick(cardIndex) {
 }
 
 
-// マウスクリックのイベントハンドラ関数
+/****************************************************************************
+*** Function Name : onCardClick()
+*** Designer : 幸前　譲
+*** Date : 2023.7.18
+*** Function : マウスクリックのイベントハンドラ関数。
+*** Return : なし
+****************************************************************************/
+
 function onCardClick(event) {
   // マウスクリック位置の座標を取得
   const mouse = new THREE.Vector2();

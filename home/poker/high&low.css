@@ -1,3 +1,13 @@
+/*******************************************************************
+***  File Name : high&low.css
+***  Version : V1.0
+***  Designer : 幸前　譲
+***  Date : 2023.07.18
+***  Purpose        : ダブルアップ(High&Low)のスタイルシート
+***
+*******************************************************************/
+
+
 body {
   background: url(images/board.png);
   background-size: cover;
