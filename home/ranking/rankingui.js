@@ -2,6 +2,7 @@
 ***Designer             : 今中翔悟
 ***Date                 : 2023/6/13
 ***Purpose              : ランキング表示UI処理
+***Module               : C1.5 M1. ランキング表示UI主処理
 **************************************************************/
 
 window.addEventListener('load',function() {
@@ -13,7 +14,7 @@ window.addEventListener('load',function() {
           //要素内に表示するシェイプの数
           'value': 130,
           'density': {
-            //シェイプ表示間隔設定
+            //シェイプ表示間隔設定Ks
             'enable': true, //true:有効, false:無効
             //シェイプ表示間隔
             'value_area': 900

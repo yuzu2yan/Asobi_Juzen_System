@@ -2,6 +2,7 @@
 ***Designer             : Shogo Imanaka
 ***Date                 : 2023/7/2
 ***Purpose              : Connect to SQL Database
+***Module               : C3.0 M5. Call data from SQL database
 **************************************************************/
 //**execute in server
 const mysql = require('mysql2');

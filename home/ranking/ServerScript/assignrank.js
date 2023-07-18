@@ -2,6 +2,7 @@
 ***Designer             : Shogo Imanaka
 ***Date                 : 2023/7/2
 ***Purpose              : Add new data to an SQL database
+***Module               : C3.0 M6. Add new data to an SQL database
 **************************************************************/
 //**execute in server
 const mysql = require('mysql');
