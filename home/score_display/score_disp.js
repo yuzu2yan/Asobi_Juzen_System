@@ -179,6 +179,3 @@ if (checkRef()) {
   result.textContent = 'Error';
 }
 // To. Changed 小林丈瑠 2023.07.11
-
-
-
