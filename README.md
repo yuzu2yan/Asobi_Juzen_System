@@ -53,7 +53,27 @@ Drawボタンを押すと，相手と勝負になり，勝敗が表示されま�
 ### 避けるゲームの遊び方
 <img src="https://github.com/Yuzudayo/Asobi_Juzen_System/assets/89567103/f1c2843a-1afc-4a08-a7e8-e1584497fdcc" width="650px">
 
-十字キーまたはWASDキーで
+十字キーまたはADキーで左右に動かし，障害物をよけていきます．  
+５秒経つごとに，スコアが10加算されます！  
+
+<img src="https://github.com/Yuzudayo/Asobi_Juzen_System/assets/89567103/10abbdd5-b99d-4bf6-8504-3e813fdd3dd8" width="650px">
+
+10秒経つごとにレベルアップし，障害物が生成される間隔が早くなっていきます．  
+
+<img src="https://github.com/Yuzudayo/Asobi_Juzen_System/assets/89567103/a0a23196-e711-48cd-916c-8dc7cf458c3a"  width="650px">  
+
+障害物にぶつかると「GAME OVER」と表示され，その時点でのスコアをランキングに登録できます．  
+
+### ブロック崩しの遊び方
+<img src="https://github.com/Yuzudayo/Asobi_Juzen_System/assets/89567103/c762a32b-7ac6-4d1f-ae4f-84f79880b967" width="650px">
+
+十字キーまたはADキーで左右に動かし，球を跳ね返しながらブロックを崩していきます．  
+１つブロックを崩すごとにスコアが10加算されます！  
+
+<img src="https://github.com/Yuzudayo/Asobi_Juzen_System/assets/89567103/dd70e627-8cc1-4045-ab5b-f62862e8a156" width="650px">
+
+ブロックをすべて崩すと，「Game Clear」と表示され，球を跳ね返せなかった場合は「Game Over」となります．  
+ゲーム終了時の最終的なスコアをランキングに登録します．
 
 
 ##### 変更を更新したい場合
